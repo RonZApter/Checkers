@@ -111,12 +111,12 @@ namespace Checkers
 
         private static double GetReward(Move move)
         {
-            if (move.isCapture) return 10;  // Capturing an enemy piece
-            if (Board.IsWinningState()) return 100;  // Winning the game
-            if (Board.IsLosingState()) return -100;  // Losing the game
+            if (move.isCapture) return 10;  
+            if (Board.IsWinningState()) return 100; 
+            if (Board.IsLosingState()) return -100;  
             if (move.makesQueen) return 90;
 
-            return -0.1;  // Small penalty to encourage faster wins
+            return -0.1;  
         }
 
 
@@ -238,7 +238,6 @@ namespace Checkers
             }
             else
             {
-                // Create file with default values if it doesn't exist
                 alpha = 0.1;
                 gamma = 0.9;
                 epsilon = 0.2;
@@ -248,10 +247,9 @@ namespace Checkers
 
   public static void SaveParameters()
 {
-    // Example evolution logic – you can adjust as you like
-    alpha = Math.Max(alpha * 0.9999, 0.01);    // decay but not below 0.01
-    gamma = Math.Min(gamma * 0.9999, 0.8);    // slowly increase but cap at 0.99
-    epsilon = Math.Max(epsilon * 0.9999, 0.05); // decay exploration rate but not below 0.05
+    alpha = Math.Max(alpha * 0.9999, 0.01);  
+    gamma = Math.Min(gamma * 0.9999, 0.8);  
+    epsilon = Math.Max(epsilon * 0.9999, 0.05); 
 
     var parameters = new Dictionary<string, double>
     {
