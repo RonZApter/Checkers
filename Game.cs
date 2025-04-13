@@ -74,9 +74,9 @@ namespace Checkers
                 else
                 {
 
-                    Console.WriteLine("Enter starting row:");
+                    Console.WriteLine("Enter starting index:");
                     String startPos = Console.ReadLine();
-                    Console.WriteLine("Enter starting column:");
+                    Console.WriteLine("Enter destination index:");
                     string destPos = Console.ReadLine();
 
 
